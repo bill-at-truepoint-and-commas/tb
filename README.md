@@ -1,4 +1,4 @@
-# Deep Flow - Time Blocking App
+# Infinite Frontiers - Time Blocking App
 
 Personal time-blocking app combining Cal Newport's multi-scale planning with AI Browser capabilities.
 

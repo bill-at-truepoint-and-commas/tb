@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TimeBlocker</title>
+    <title>Infinite Frontiers</title>
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
     <div id="app">
-        <!-- Day/Week Selector -->
+        <!-- Day Selector -->
         <div id="day-indicator">
             <span>day:</span>
-            <select id="day-dropdown">
-                <option>Loading...</option>
-            </select>
+            <select id="day-dropdown"></select>
         </div>
 
         <!-- Save Indicator -->
@@ -23,78 +21,59 @@
         <table id="daily-table">
             <thead>
                 <tr>
-                    <th class="time-header">Time</th>
-                    <th class="column-header" data-column="1">Plan A</th>
+                    <th class="time-header">time</th>
+                    <th class="column-header">plan</th>
                 </tr>
             </thead>
             <tbody>
                 <tr data-time="09:00am">
                     <td class="time-cell">🕘 09:00am</td>
-                    <td class="editable-cell" data-column="1" data-time="09:00am"></td>
+                    <td class="block-cell" data-time="09:00am"></td>
                 </tr>
                 <tr data-time="10:00am">
                     <td class="time-cell">10:00am</td>
-                    <td class="editable-cell" data-column="1" data-time="10:00am"></td>
+                    <td class="block-cell" data-time="10:00am"></td>
                 </tr>
                 <tr data-time="11:00am">
                     <td class="time-cell">11:00am</td>
-                    <td class="editable-cell" data-column="1" data-time="11:00am"></td>
+                    <td class="block-cell" data-time="11:00am"></td>
                 </tr>
                 <tr data-time="12:00pm">
                     <td class="time-cell">🕛 12:00pm</td>
-                    <td class="editable-cell" data-column="1" data-time="12:00pm"></td>
+                    <td class="block-cell" data-time="12:00pm"></td>
                 </tr>
                 <tr data-time="01:00pm">
                     <td class="time-cell">01:00pm</td>
-                    <td class="editable-cell" data-column="1" data-time="01:00pm"></td>
+                    <td class="block-cell" data-time="01:00pm"></td>
                 </tr>
                 <tr data-time="02:00pm">
                     <td class="time-cell">02:00pm</td>
-                    <td class="editable-cell" data-column="1" data-time="02:00pm"></td>
+                    <td class="block-cell" data-time="02:00pm"></td>
                 </tr>
                 <tr data-time="03:00pm">
                     <td class="time-cell">🕑 03:00pm</td>
-                    <td class="editable-cell" data-column="1" data-time="03:00pm"></td>
+                    <td class="block-cell" data-time="03:00pm"></td>
                 </tr>
                 <tr data-time="04:00pm">
                     <td class="time-cell">04:00pm</td>
-                    <td class="editable-cell" data-column="1" data-time="04:00pm"></td>
+                    <td class="block-cell" data-time="04:00pm"></td>
                 </tr>
             </tbody>
         </table>
 
-        <!-- Action Panel (for expandNow) -->
-        <div id="action-panel" class="hidden">
-            <div class="panel-header">
-                <h3 id="panel-title">Current Block</h3>
-                <button id="close-panel">×</button>
-            </div>
-            <div id="panel-content"></div>
-        </div>
-
         <!-- Controls -->
         <div id="button-container">
-            <button class="control-button" onclick="window.timeBlocker.pivot()">
-                pivot
-            </button>
-            <button class="control-button danger" onclick="window.timeBlocker.shutdown()">
-                shutdown
-            </button>
+            <button class="control-button" onclick="timeBlocker.pivot()">pivot</button>
+            <button class="control-button danger" onclick="timeBlocker.shutdown()">shutdown</button>
         </div>
 
         <!-- Instructions -->
         <div id="instructions">
-            <strong>AI commands:</strong>
-            expand<br>
-            pivot<br>
-            shutdown<br>
-            carve<br>
-            <br>
-            <a href="src/weekly.html" style="color: #333; text-decoration: underline;">→ weekly view</a>
+            <strong>commands:</strong>
+            expand · pivot · shutdown · carve
         </div>
     </div>
 
-    <script src="src/app-bundled.js"></script>
-    <script src="src/router.js"></script>
+    <script src="src/app.js"></script>
 </body>
 </html>
